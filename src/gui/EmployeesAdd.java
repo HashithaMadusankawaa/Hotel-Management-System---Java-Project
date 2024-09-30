@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Vector;
+import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -32,6 +33,9 @@ public class EmployeesAdd extends javax.swing.JDialog {
         LoadDepartmant();
         LoadDesignation();
         LoadGender();
+        String employeeID = generateEmployeeID();
+        jTextField4.setText(employeeID);
+        jTextField4.setEditable(false);
     }
 
     private void LoadDepartmant() {
@@ -51,6 +55,18 @@ public class EmployeesAdd extends javax.swing.JDialog {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    private static AtomicInteger counter = new AtomicInteger(1);  
+    public static String generateEmployeeID() {
+        // Get the current year
+        String year = new SimpleDateFormat("yyyy").format(new Date());
+        
+        // Get the next unique number (4 digits with leading zeros)
+        String uniqueNumber = String.format("%04d", counter.getAndIncrement());
+
+        // Combine the prefix, year, and unique number to form the employee ID
+        return "EMP" + year + uniqueNumber;
+       
     }
 
     private void LoadDesignation() {
@@ -125,6 +141,8 @@ public class EmployeesAdd extends javax.swing.JDialog {
         jButton3 = new javax.swing.JButton();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Employees Add");
@@ -265,6 +283,9 @@ public class EmployeesAdd extends javax.swing.JDialog {
         jLabel13.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         jLabel13.setText("Gender");
 
+        jLabel14.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jLabel14.setText("Birthday");
+
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);
         panelRound1Layout.setHorizontalGroup(
@@ -276,7 +297,7 @@ public class EmployeesAdd extends javax.swing.JDialog {
                         .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                         .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -314,7 +335,12 @@ public class EmployeesAdd extends javax.swing.JDialog {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRound1Layout.createSequentialGroup()
+                        .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelRound1Layout.setVerticalGroup(
@@ -380,7 +406,11 @@ public class EmployeesAdd extends javax.swing.JDialog {
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -481,6 +511,7 @@ public class EmployeesAdd extends javax.swing.JDialog {
         String password = String.valueOf(jPasswordField1.getPassword());
 
         Date date = jDateChooser1.getDate();
+        Date birthday = jDateChooser2.getDate();
         String department = String.valueOf(jComboBox1.getSelectedItem());
        
         String designation = String.valueOf(jComboBox2.getSelectedItem());
@@ -523,8 +554,8 @@ public class EmployeesAdd extends javax.swing.JDialog {
                     if (profileResultSet.next()) {
                         profileid = profileResultSet.getInt("last_id");
                     }
-                    Mysql2.miud("INSERT INTO `employee`(`fname`,`lname`,`emp_id`,`join_date`,`email`,`password`,`mobile`,`employee_profile_id`,`department_id`,`gender_id`)"
-                            + "VALUES('" + fname + "','" + lname + "','" + empid + "','" + sdf.format(date) + "','" + email + "','" + password + "','"+mobile+"','"+profileid+ "','"+departmantMap.get(String.valueOf(department)) + "','" + genderMap.get(String.valueOf(gender)) + "')"
+                    Mysql2.miud("INSERT INTO `employee`(`fname`,`lname`,`emp_id`,`join_date`,`email`,`password`,`mobile`,`employee_profile_id`,`department_id`,`gender_id`,`birth_day`)"
+                            + "VALUES('" + fname + "','" + lname + "','" + empid + "','" + sdf.format(date) + "','" + email + "','" + password + "','"+mobile+"','"+profileid+ "','"+departmantMap.get(String.valueOf(department)) + "','" + genderMap.get(String.valueOf(gender)) + "','"+sdf.format(date)+"')"
                 
                 );
                 }
@@ -588,11 +619,13 @@ public class EmployeesAdd extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
