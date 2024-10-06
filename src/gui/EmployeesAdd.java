@@ -555,7 +555,7 @@ public class EmployeesAdd extends javax.swing.JDialog {
                         profileid = profileResultSet.getInt("last_id");
                     }
                     Mysql2.miud("INSERT INTO `employee`(`fname`,`lname`,`emp_id`,`join_date`,`email`,`password`,`mobile`,`employee_profile_id`,`department_id`,`gender_id`,`birth_day`)"
-                            + "VALUES('" + fname + "','" + lname + "','" + empid + "','" + sdf.format(date) + "','" + email + "','" + password + "','"+mobile+"','"+profileid+ "','"+departmantMap.get(String.valueOf(department)) + "','" + genderMap.get(String.valueOf(gender)) + "','"+sdf.format(date)+"')"
+                            + "VALUES('" + fname + "','" + lname + "','" + empid + "','" + sdf.format(date) + "','" + email + "','" + password + "','"+mobile+"','"+profileid+ "','"+departmantMap.get(String.valueOf(department)) + "','" + genderMap.get(String.valueOf(gender)) + "','"+sdf.format(date)+"','"+sdf.format(birthday)+"')"
                 
                 );
                 }

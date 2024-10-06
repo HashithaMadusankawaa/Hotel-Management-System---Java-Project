@@ -262,6 +262,9 @@ public class Dashbord extends javax.swing.JFrame {
         panelRound48 = new test.PanelRound();
         jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         panelRound49 = new test.PanelRound();
         panelRound51 = new test.PanelRound();
         kGradientPanel1 = new keeptoo.KGradientPanel();
@@ -310,6 +313,9 @@ public class Dashbord extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jLabel2MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel2MousePressed(evt);
             }
         });
 
@@ -800,7 +806,7 @@ public class Dashbord extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        panelRound10.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound10.setBackground(new java.awt.Color(250, 250, 250));
         panelRound10.setRoundBottomLeft(15);
         panelRound10.setRoundBottomRight(15);
         panelRound10.setRoundTopLeft(15);
@@ -826,7 +832,7 @@ public class Dashbord extends javax.swing.JFrame {
         panelRound13.setRoundTopRight(15);
 
         jLabel3.setFont(new java.awt.Font("Poppins Light", 0, 10)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(23, 21, 67));
+        jLabel3.setForeground(new java.awt.Color(194, 245, 49));
         jLabel3.setText("Today Booking");
 
         jLabel8.setFont(new java.awt.Font("Poppins Light", 1, 14)); // NOI18N
@@ -866,7 +872,7 @@ public class Dashbord extends javax.swing.JFrame {
         panelRound14.setRoundTopRight(15);
 
         jLabel5.setFont(new java.awt.Font("Poppins Light", 0, 10)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(23, 21, 67));
+        jLabel5.setForeground(new java.awt.Color(194, 245, 49));
         jLabel5.setText("Total Amount");
 
         jLabel9.setFont(new java.awt.Font("Poppins Light", 1, 14)); // NOI18N
@@ -914,7 +920,7 @@ public class Dashbord extends javax.swing.JFrame {
         panelRound15.setRoundTopRight(15);
 
         jLabel7.setFont(new java.awt.Font("Poppins Light", 0, 10)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(23, 21, 67));
+        jLabel7.setForeground(new java.awt.Color(194, 245, 49));
         jLabel7.setText("Total Customer");
 
         jLabel11.setFont(new java.awt.Font("Poppins Light", 1, 14)); // NOI18N
@@ -954,7 +960,7 @@ public class Dashbord extends javax.swing.JFrame {
         panelRound16.setRoundTopRight(15);
 
         jLabel12.setFont(new java.awt.Font("Poppins Light", 0, 10)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(23, 21, 67));
+        jLabel12.setForeground(new java.awt.Color(194, 245, 49));
         jLabel12.setText("Total Revenue");
 
         jLabel13.setFont(new java.awt.Font("Poppins Light", 1, 14)); // NOI18N
@@ -2072,7 +2078,7 @@ public class Dashbord extends javax.swing.JFrame {
 
         panelRound10.add(panelRound6, "card6");
 
-        panelRound7.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound7.setBackground(new java.awt.Color(245, 245, 245));
         panelRound7.setRoundBottomLeft(15);
         panelRound7.setRoundBottomRight(15);
         panelRound7.setRoundTopLeft(15);
@@ -2104,49 +2110,118 @@ public class Dashbord extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        panelRound48.setBackground(new java.awt.Color(231, 235, 242));
+        panelRound48.setBackground(new java.awt.Color(255, 255, 255));
         panelRound48.setRoundBottomLeft(15);
         panelRound48.setRoundBottomRight(15);
         panelRound48.setRoundTopLeft(15);
         panelRound48.setRoundTopRight(15);
 
-        jButton4.setBackground(new java.awt.Color(0, 204, 0));
+        jButton4.setBackground(new java.awt.Color(194, 245, 49));
         jButton4.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setForeground(new java.awt.Color(23, 21, 67));
         jButton4.setText("HRMS");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton4MouseEntered(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 0));
+        jButton1.setBackground(new java.awt.Color(194, 245, 49));
         jButton1.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Duty Changes");
+        jButton1.setForeground(new java.awt.Color(23, 21, 67));
+        jButton1.setText("Leave Tracking");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setBackground(new java.awt.Color(194, 245, 49));
+        jButton5.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(23, 21, 67));
+        jButton5.setText("Departments");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton5MouseEntered(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setBackground(new java.awt.Color(194, 245, 49));
+        jButton6.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(23, 21, 67));
+        jButton6.setText("Duty Changes");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton6MouseEntered(evt);
+            }
+        });
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setBackground(new java.awt.Color(194, 245, 49));
+        jButton7.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(23, 21, 67));
+        jButton7.setText("Attendance");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton7MouseEntered(evt);
+            }
+        });
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound48Layout = new javax.swing.GroupLayout(panelRound48);
         panelRound48.setLayout(panelRound48Layout);
         panelRound48Layout.setHorizontalGroup(
             panelRound48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound48Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+            .addGroup(panelRound48Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelRound48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
+                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRound48Layout.setVerticalGroup(
             panelRound48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound48Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        panelRound49.setBackground(new java.awt.Color(230, 231, 232));
+        panelRound49.setBackground(new java.awt.Color(255, 255, 255));
         panelRound49.setRoundBottomLeft(15);
         panelRound49.setRoundBottomRight(15);
         panelRound49.setRoundTopLeft(15);
@@ -2163,7 +2238,7 @@ public class Dashbord extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        panelRound51.setBackground(new java.awt.Color(248, 248, 248));
+        panelRound51.setBackground(new java.awt.Color(255, 255, 255));
         panelRound51.setRoundBottomLeft(15);
         panelRound51.setRoundBottomRight(15);
         panelRound51.setRoundTopLeft(15);
@@ -2180,8 +2255,9 @@ public class Dashbord extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(248, 248, 248));
-        kGradientPanel1.setkStartColor(new java.awt.Color(248, 248, 248));
+        kGradientPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        kGradientPanel1.setkEndColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
 
         jLabel40.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         jLabel40.setText("Upcomming Birthday");
@@ -2217,7 +2293,7 @@ public class Dashbord extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel40)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -2319,20 +2395,24 @@ public class Dashbord extends javax.swing.JFrame {
     }//GEN-LAST:event_panelRound4MouseClicked
 
     private void panelRound2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound2MouseEntered
-        panelRound2.setBackground(new Color(229, 230, 232));
+        panelRound2.setBackground(new Color(23,21,67));
+        jLabel2.setForeground(Color.WHITE);
         
     }//GEN-LAST:event_panelRound2MouseEntered
 
     private void panelRound2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound2MouseExited
         panelRound2.setBackground(new Color(255, 255, 255));
+         jLabel2.setForeground(Color.BLACK);
     }//GEN-LAST:event_panelRound2MouseExited
 
     private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        panelRound2.setBackground(new Color(229, 230, 232));
+        panelRound2.setBackground(new Color(23,21,67));
+        jLabel2.setForeground(Color.WHITE);
     }//GEN-LAST:event_jLabel2MouseEntered
 
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
         panelRound2.setBackground(new Color(255, 255, 255));
+        jLabel2.setForeground(Color.BLACK);
     }//GEN-LAST:event_jLabel2MouseExited
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
@@ -2620,6 +2700,48 @@ public class Dashbord extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_panelRound46MouseExited
 
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MousePressed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
+        jButton4.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jButton4MouseEntered
+
+    private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
+        jButton6.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jButton6MouseEntered
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+       jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseEntered
+        jButton7.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jButton7MouseEntered
+
+    private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
+        jButton5.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jButton5MouseEntered
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        AssignedEmployeeList ael = new AssignedEmployeeList(null, true);
+        ael.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       LeaveRequest lr = new LeaveRequest(this, true);
+       lr.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public static void main(String args[]) {
         FlatMacLightLaf.setup();
         /* Create and display the form */
@@ -2636,6 +2758,9 @@ public class Dashbord extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
